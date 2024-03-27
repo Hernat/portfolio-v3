@@ -156,7 +156,7 @@ const About = () => {
                     {/* tabs */}
                     <div className="flex-1">
                         <Tabs defaultValue="personal">
-                            <TabsList className="xl:w-full w-1/2 mx-auto grid xl:grid-cols-3  border border-primary  ">
+                            <TabsList className="xl:w-full w-1/2 mx-auto grid xl:grid-cols-3  border border-primary/20  ">
                                 <TabsTrigger
                                     className="w-[162px] xl:w-auto"
                                     value="personal"
@@ -366,25 +366,25 @@ const About = () => {
                                                                 <span
                                                                     key={index}
                                                                     className={cn(
-                                                                        " bg-secondary rounded-sm border-b-8 text-md font-medium mb-2 px-2.5 py-0.5 rounde ",
+                                                                        " bg-secondary rounded-sm border-b-8 text-md font-medium mb-2 px-2.5 py-0.5 dark:bg-secondary ",
                                                                         name.toLowerCase() ===
                                                                             "html" &&
-                                                                            `text-green-500  border-green-500 w-[100%]`,
+                                                                            `text-green-500  bg-green-100  border-green-500 w-[100%]`,
                                                                         name.toLowerCase() ===
                                                                             "css" &&
-                                                                            `text-orange-500  border-orange-500 w-[100%]`,
+                                                                            `text-orange-500 bg-orange-100  border-orange-500 w-[100%]`,
                                                                         name.toLowerCase() ===
                                                                             "reactjs" &&
-                                                                            `text-blue-500  border-blue-500 w-[70%]`,
+                                                                            `text-blue-500  bg-blue-100  border-blue-500 w-[70%]`,
                                                                         name.toLowerCase() ===
                                                                             "nodejs" &&
-                                                                            `text-green-900  border-green-900 w-[60%]`,
+                                                                            `text-green-900  bg-green-100 border-green-900 w-[60%]`,
                                                                         name.toLowerCase() ===
                                                                             "nextjs" &&
                                                                             ` border-black/90 dark:border-white/90 w-[65%]`,
                                                                         name.toLowerCase() ===
                                                                             "javascript" &&
-                                                                            `text-yellow-500  border-yellow-500 w-[80%]`
+                                                                            `text-yellow-500 bg-yellow-100 border-yellow-500 w-[80%]`
                                                                     )}
                                                                 >
                                                                     {name}

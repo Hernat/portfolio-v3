@@ -1,10 +1,13 @@
-import { Outfit } from "next/font/google";
+import { Outfit, Nunito } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "../components/Header";
 
 const outfit = Outfit({ subsets: ["latin"] });
+const nunito = Nunito({
+    subsets: ["latin"],
+});
 
 export const metadata = {
     title: "Touky Hernat",
@@ -13,7 +16,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en">
             <body className={outfit.className}>
                 <ThemeProvider attribute="class" defaultTheme="light">
                     <Header />
