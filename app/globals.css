@@ -5,13 +5,13 @@
 
 @layer base {
     :root {
-        --background: 0 100% 99.41%;
-        --foreground: 240 19% 16%;
+        --background: 53.5 44.44% 96.47%;
+        --foreground: 37.5 15.69% 20%;
         --card: 0 0% 100%;
         --card-foreground: 240 19% 16%;
         --popover: 0 0% 100%;
         --popover-foreground: 0 0% 3.9%;
-        --primary: 0 72.2% 50.6%;
+        --primary: 35.09 100% 33.53%;
         /* --primary: 39.02, 74.09%, 51.57%; */
         --primary-foreground: 0 85.7% 97.3%;
         --secondary: 0 0% 96.1%;
@@ -29,19 +29,19 @@
     }
 
     .dark {
-        --background: 0,19.05%, 8.24%;
-        --foreground: 0 0% 98%;
+        --background: 60 4.68% 2.68% ;
+        --foreground: 36 24.59% 88.04%;
         --card: 0 0% 3.9%;
         --card-foreground: 0 0% 98%;
         --popover: 0 0% 3.9%;
         --popover-foreground: 0 0% 98%;
-        --primary: 0 72.2% 50.6%;
+        --primary: 35.09 100% 33.53%;
         /* --primary: 39, 55%, 36%; */
         --primary-foreground: 0 85.7% 97.3%;
         --secondary: 0 0% 14.9%;
         --secondary-foreground: 0 0% 98%;
         --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
+        --muted-foreground: 35.45 29.73% 70.98%;
         --accent: 0 0% 14.9%;
         --accent-foreground: 0 0% 98%;
         --destructive: 0 62.8% 30.6%;
@@ -56,9 +56,7 @@
     * {
         @apply border-border;
     }
-    .test {
-      color: hsl(0, 19.05%, 8.24%)
-    }
+   
     body {
         @apply bg-background text-foreground;
     }
@@ -66,17 +64,17 @@
 
 
 .h1 {
-    @apply text-6xl xl:text-[72px] xl:leading-[80px] tracking-[-2px] font-bold
+    @apply text-6xl xl:text-[72px] xl:leading-[80px] tracking-[-2px] font-bold text-foreground
 }
 .h2 {
-    @apply text-4xl font-bold
+    @apply text-4xl font-bold text-foreground
 }
 .h3 {
-    @apply text-2xl font-bold
+    @apply text-2xl font-bold text-foreground
 }
 
 .h4 {
-    @apply text-[22px] font-semibold
+    @apply text-[22px] font-semibold text-foreground
 }
 
 .subtitle {
@@ -84,11 +82,11 @@
 }
 
 .section-title {
-    @apply text-4xl font-bold relative w-max flex items-center justify-between gap-x-3 before:bg-dots_light before:dark:bg-dots_dark before:bg-no-repeat before:bg-center before:w-[24px] before:h-[24px]
+    @apply text-4xl font-bold relative w-max flex  text-foreground items-center justify-between gap-x-3 before:bg-dots_light before:dark:bg-dots_dark before:bg-no-repeat before:bg-center before:w-[24px] before:h-[24px]
 }
 
 .badge {
-    @apply z-10 w-[200px] h-[68px] bg-white dark:backdrop-blur-[44px] shadow-2xl p-4 rounded-[10px] flex items-center gap-x-4
+    @apply z-10 w-[200px] h-[68px] bg-foreground dark:backdrop-blur-[44px] shadow-2xl p-4 rounded-[10px] flex items-center gap-x-4
 }
 .swiper-horizontal >  .section-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
     @apply  bg-primary

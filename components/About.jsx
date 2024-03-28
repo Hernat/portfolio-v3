@@ -12,6 +12,7 @@ import {
     Briefcase,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { EvervaultCard, Icon } from "./ui/evervault-card";
 
 const infosData = [
     {
@@ -46,7 +47,7 @@ const skillsData = [
         title: "skills",
         data: [
             {
-                name: "HTML",
+                name: "HTML, CSS, JS",
                 level: 100,
             },
             {
@@ -147,11 +148,15 @@ const About = () => {
 
                 <div className="flex flex-col xl:flex-row ">
                     {/* image */}
-                    <div className="hidden xl:flex flex-1 relative">
-                        <DevImg
-                            containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative"
-                            imgSrc="/about/developer.png"
-                        />
+                    <div className="hidden xl:flex gap-x-10 flex-1 relative">
+                        <div className="border border-black/[0.2] dark:border-white/[0.2] flex flex-col items-start  mx-auto p-4 relative h-[32rem] w-[32rem] ">
+                            <Icon className="absolute h-6 w-6 -top-3 -left-3 text-foreground" />
+                            <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-foreground" />
+                            <Icon className="absolute h-6 w-6 -top-3 -right-3 text-foreground" />
+                            <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-foreground" />
+
+                            <EvervaultCard image="/about/moi.png" />
+                        </div>
                     </div>
                     {/* tabs */}
                     <div className="flex-1">
@@ -214,13 +219,13 @@ const About = () => {
                                             </div>
                                             <div className="border-b border-border"></div>
                                             <div className="flex flex-col gap-y-2 text-left">
-                                                <span className="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400  ">
+                                                <span className=" text-sm font-medium me-2 px-2.5 py-0.5 rounded  border border-primary bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50 ">
                                                     Malagasy
                                                 </span>
-                                                <span className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 w-[90%]">
+                                                <span className=" text-sm font-medium me-2 px-2.5 py-0.5 rounded  border border-primary bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50 w-[90%] ">
                                                     French
                                                 </span>
-                                                <span className="bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300 w-[65%]">
+                                                <span className=" text-sm font-medium me-2 px-2.5 py-0.5 rounded  border border-primary bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50 w-[70%] ">
                                                     English
                                                 </span>
                                             </div>
@@ -239,7 +244,7 @@ const About = () => {
                                             <div className="flex flex-col gap-y-6">
                                                 <div className="flex gap-x-4 items-center text-[22px] text-primary">
                                                     <Briefcase />
-                                                    <h4 className="capitalize font-medium">
+                                                    <h4 className="capitalize font-medium bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50">
                                                         {
                                                             getData(
                                                                 qualificationsData,
@@ -290,7 +295,7 @@ const About = () => {
                                             <div className="flex flex-col gap-y-6">
                                                 <div className="flex gap-x-4 items-center text-[22px] text-primary">
                                                     <GraduationCap size={28} />
-                                                    <h4 className="capitalize font-medium">
+                                                    <h4 className="capitalize font-medium bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50">
                                                         {
                                                             getData(
                                                                 qualificationsData,
@@ -365,26 +370,32 @@ const About = () => {
                                                             <div className="flex flex-col font-medium mb-2">
                                                                 <span
                                                                     key={index}
+                                                                    // className={cn(
+                                                                    //     " bg-secondary rounded-sm border-b-8 text-md font-medium mb-2 px-2.5 py-0.5 dark:bg-secondary ",
+                                                                    //     name.toLowerCase() ===
+                                                                    //         "html" &&
+                                                                    //         `text-green-500  bg-green-100  border-green-500 w-[100%]`,
+                                                                    //     name.toLowerCase() ===
+                                                                    //         "css" &&
+                                                                    //         `text-orange-500 bg-orange-100  border-orange-500 w-[100%]`,
+                                                                    //     name.toLowerCase() ===
+                                                                    //         "reactjs" &&
+                                                                    //         `text-blue-500  bg-blue-100  border-blue-500 w-[70%]`,
+                                                                    //     name.toLowerCase() ===
+                                                                    //         "nodejs" &&
+                                                                    //         `text-green-900  bg-green-100 border-green-900 w-[60%]`,
+                                                                    //     name.toLowerCase() ===
+                                                                    //         "nextjs" &&
+                                                                    //         ` border-black/90 dark:border-white/90 w-[65%]`,
+                                                                    //     name.toLowerCase() ===
+                                                                    //         "javascript" &&
+                                                                    //         `text-yellow-500 bg-yellow-100 border-yellow-500 w-[80%]`
+                                                                    // )}
                                                                     className={cn(
-                                                                        " bg-secondary rounded-sm border-b-8 text-md font-medium mb-2 px-2.5 py-0.5 dark:bg-secondary ",
+                                                                        "rounded-sm border-b-8 text-md font-medium mb-2 px-2.5 py-0.5 bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50 border-primary bg-muted-foreground",
                                                                         name.toLowerCase() ===
                                                                             "html" &&
-                                                                            `text-green-500  bg-green-100  border-green-500 w-[100%]`,
-                                                                        name.toLowerCase() ===
-                                                                            "css" &&
-                                                                            `text-orange-500 bg-orange-100  border-orange-500 w-[100%]`,
-                                                                        name.toLowerCase() ===
-                                                                            "reactjs" &&
-                                                                            `text-blue-500  bg-blue-100  border-blue-500 w-[70%]`,
-                                                                        name.toLowerCase() ===
-                                                                            "nodejs" &&
-                                                                            `text-green-900  bg-green-100 border-green-900 w-[60%]`,
-                                                                        name.toLowerCase() ===
-                                                                            "nextjs" &&
-                                                                            ` border-black/90 dark:border-white/90 w-[65%]`,
-                                                                        name.toLowerCase() ===
-                                                                            "javascript" &&
-                                                                            `text-yellow-500 bg-yellow-100 border-yellow-500 w-[80%]`
+                                                                            "w-[50%]"
                                                                     )}
                                                                 >
                                                                     {name}

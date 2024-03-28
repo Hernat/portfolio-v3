@@ -76,7 +76,7 @@ module.exports = {
             },
             backgroundImage: {
                 hero: "url('/hero.png')",
-                hero_shape: "url('/hero/shape-1.svg')",
+                hero_shape: "url('/hero/Ellipse 29.svg')",
                 hero_shape2_light: "url('/hero/shape-2-light.svg')",
                 hero_shape2_dark: "url('/hero/shape-2-dark.svg')",
                 dots_light: "url('/dots-light.svg')",
@@ -87,6 +87,22 @@ module.exports = {
                     "url('/contact/illustration-light.svg')",
                 contact_illustration_dark:
                     "url('/contact/illustration-dark.svg')",
+            },
+
+            animation: {
+                spotlight: "spotlight 2s ease .75s 1 forwards",
+            },
+            keyframes: {
+                spotlight: {
+                    "0%": {
+                        opacity: 0,
+                        transform: "translate(-72%, -62%) scale(0.5)",
+                    },
+                    "100%": {
+                        opacity: 1,
+                        transform: "translate(-50%,-40%) scale(1)",
+                    },
+                },
             },
         },
     },

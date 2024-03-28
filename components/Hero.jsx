@@ -16,6 +16,8 @@ import DevImg from "./DevImg";
 import Badge from "./Badge";
 import Socials from "./Socials";
 import { ScrollParallax } from "react-just-parallax";
+import { Spotlight } from "./ui/Spotlight";
+import { EvervaultCard, Icon } from "./ui/evervault-card";
 
 const Hero = () => {
     const words = [
@@ -34,10 +36,14 @@ const Hero = () => {
 
     return (
         <section className="py-12 xl:py-4 h-[84vh] xl:pt-28 ">
+            <Spotlight
+                className="-top-40 left-0 md:left-60 md:-top-20"
+                fill="#f8e4a6"
+            />
             <div className="container mx-auto ">
                 <div className="flex justify-between gap-x-8">
                     {/* Text */}
-                    <div className=" flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left">
+                    <div className=" flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left antialiased relative overflow-hidden ">
                         <div className="text-sm uppercase font-semibold  text-primary tracking-[4px]">
                             <TypewriterEffectSmooth
                                 words={words}
@@ -45,7 +51,10 @@ const Hero = () => {
                             />
                         </div>
                         <h1 className="h1 mb-4">
-                            Hello, my name is Lorem Ipsum
+                            Hello, my name is{" "}
+                            <span className="bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50">
+                                Lorem Ipsum
+                            </span>
                         </h1>
                         <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
                             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -97,7 +106,7 @@ const Hero = () => {
                             {/* badge 3 */}
 
                             <Badge
-                                containerStyles="absolute top-[55%] -right-[1rem]"
+                                containerStyles="absolute top-[55%] -right-[1rem] "
                                 icon={<RiTeamFill />}
                                 endCountNum={1}
                                 endCountText="K"
@@ -105,11 +114,14 @@ const Hero = () => {
                             />
                         </ScrollParallax>
 
-                        <div className="bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2"></div>
-                        <DevImg
-                            containerStyles="bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom "
-                            imgSrc="/hero/developer.png"
-                        />
+                        <div className="border border-black/[0.2] dark:border-white/[0.2] flex flex-col items-start  mx-auto p-4 relative h-[36rem] w-[36rem] ">
+                            <Icon className="absolute h-6 w-6 -top-3 -left-3 text-foreground" />
+                            <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-foreground" />
+                            <Icon className="absolute h-6 w-6 -top-3 -right-3 text-foreground" />
+                            <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-foreground" />
+
+                            <EvervaultCard image="/hero/moi-lunnete.png" />
+                        </div>
                     </div>
                 </div>
                 {/* icons */}

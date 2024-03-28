@@ -3,9 +3,11 @@ import {
     Card,
     CardContent,
     CardDescription,
+    CardFooter,
     CardHeader,
     CardTitle,
 } from "./ui/card";
+import { Button } from "./ui/button";
 
 const servicesData = [
     {
@@ -43,18 +45,21 @@ const Services = () => {
                             key={index}
                         >
                             <CardHeader className="text-primary absolute -top-[60px]">
-                                <div className="w-[140px] h-[80px] bg-background dark:bg-background flex justify-center items-center">
+                                <div className="w-[140px] h-[80px] bg-background   flex justify-center items-center">
                                     {service.icon}
                                 </div>
                             </CardHeader>
                             <CardContent className="text-center ">
-                                <CardTitle className="mb-4">
+                                <CardTitle className="mb-4 bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 bg-opacity-50">
                                     {service.title}
                                 </CardTitle>
                                 <CardDescription className="text-lg">
                                     {service.description}
                                 </CardDescription>
                             </CardContent>
+                            <CardFooter>
+                                <Button>More..</Button>
+                            </CardFooter>
                         </Card>
                     ))}
                 </div>
