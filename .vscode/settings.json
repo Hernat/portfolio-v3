@@ -3,6 +3,7 @@
         "clsx",
         "Evervault",
         "Swiper",
+        "tabler",
         "tailwindcss"
     ],
     "workbench.colorCustomizations": {

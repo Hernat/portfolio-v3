@@ -392,19 +392,21 @@ const Cta = () => {
     ];
 
     return (
-        <section className="py-24 bg-secondary dark:bg-secondary/40">
-            <div className="container mx-auto">
+        <section className="py-24 bg-secondary dark:bg-secondary/40 relative flex flex-col items-center gap-y-10">
+            <div className="container mx-auto ">
                 <div className="flex flex-col items-center">
                     <h2 className="h2 max-w-xl text-center mb-8">
                         Prepared to tur your next project? I&apos;m here to help
                     </h2>
-                    <Link href="/contact">Contact me</Link>
+                    <Link href="/contact">
+                        <Button>Contact me</Button>
+                    </Link>
                 </div>
-                {/* Globe */}
-                <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
-                <div className=" w-72 mx-auto h-72 md:h-full z-10">
-                    <World data={sampleArcs} globeConfig={globeConfig} />
-                </div>
+            </div>
+            {/* Globe */}
+            <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
+            <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
+                <World data={sampleArcs} globeConfig={globeConfig} />
             </div>
         </section>
     );

@@ -1,3 +1,5 @@
+"use client";
+
 import { GanttChartSquare, Blocks, Gem } from "lucide-react";
 import {
     Card,
@@ -9,28 +11,117 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 
+import React, { useState } from "react";
+import { MultiStepLoader as Loader } from "./ui/multi-step-loader";
+import { IconSquareRoundedX } from "@tabler/icons-react";
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover";
+import { PopoverClose } from "@radix-ui/react-popover";
+
 const servicesData = [
     {
         icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
         title: "Web Design",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem assumenda, ",
+        loadingStates: [
+            {
+                text: "Buying a condo web",
+            },
+            {
+                text: "Travelling in a flight",
+            },
+            {
+                text: "Meeting Tyler Durden",
+            },
+            {
+                text: "He makes soap",
+            },
+            {
+                text: "We goto a bar",
+            },
+            {
+                text: "Start a fight",
+            },
+            {
+                text: "We like it",
+            },
+            {
+                text: "Welcome to F**** C***",
+            },
+        ],
     },
     {
         icon: <Blocks size={72} strokeWidth={0.8} />,
         title: "Web Developer",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem assumenda, ",
+        loadingStates: [
+            {
+                text: "Buying a condo DEV",
+            },
+            {
+                text: "Travelling in a flight",
+            },
+            {
+                text: "Meeting Tyler Durden",
+            },
+            {
+                text: "He makes soap",
+            },
+            {
+                text: "We goto a bar",
+            },
+            {
+                text: "Start a fight",
+            },
+            {
+                text: "We like it",
+            },
+            {
+                text: "Welcome to F**** C***",
+            },
+        ],
     },
     {
         icon: <Gem size={72} strokeWidth={0.8} />,
         title: "App Design",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem assumenda, ",
+        loadingStates: [
+            {
+                text: "Buying a condo APP",
+            },
+            {
+                text: "Travelling in a flight",
+            },
+            {
+                text: "Meeting Tyler Durden",
+            },
+            {
+                text: "He makes soap",
+            },
+            {
+                text: "We goto a bar",
+            },
+            {
+                text: "Start a fight",
+            },
+            {
+                text: "We like it",
+            },
+            {
+                text: "Welcome to F**** C***",
+            },
+        ],
     },
 ];
 
 const Services = () => {
+    const [loading, setLoading] = useState(false);
     return (
         <section className="mb-12 xl:mb-36 mt-12 xl:mt-36">
             <div className="container mx-auto">
@@ -58,7 +149,37 @@ const Services = () => {
                                 </CardDescription>
                             </CardContent>
                             <CardFooter>
-                                <Button>More..</Button>
+                                <Popover modal>
+                                    <PopoverTrigger asChild>
+                                        <Button
+                                            onClick={() => setLoading(true)}
+                                        >
+                                            Click to load
+                                        </Button>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="w-auto ">
+                                        {/* Core Loader Modal */}
+                                        <Loader
+                                            loadingStates={
+                                                service.loadingStates
+                                            }
+                                            loading={loading}
+                                            duration={1500}
+                                        />
+                                        <PopoverClose asChild>
+                                            {loading && (
+                                                <button
+                                                    className="fixed top-4 right-4 text-foreground z-[120]"
+                                                    onClick={() =>
+                                                        setLoading(false)
+                                                    }
+                                                >
+                                                    <IconSquareRoundedX className="h-6 w-6" />
+                                                </button>
+                                            )}
+                                        </PopoverClose>
+                                    </PopoverContent>
+                                </Popover>
                             </CardFooter>
                         </Card>
                     ))}

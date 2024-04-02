@@ -1,13 +1,10 @@
-import { Outfit, Nunito } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "../components/Header";
 
 const outfit = Outfit({ subsets: ["latin"] });
-const nunito = Nunito({
-    subsets: ["latin"],
-});
 
 export const metadata = {
     title: "Touky Hernat",

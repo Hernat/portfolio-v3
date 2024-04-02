@@ -53,7 +53,7 @@ const Hero = () => {
                         <h1 className="h1 mb-4">
                             Hello, my name is{" "}
                             <span className="bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50">
-                                Lorem Ipsum
+                                Lorem Ipsum.
                             </span>
                         </h1>
                         <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
@@ -108,9 +108,9 @@ const Hero = () => {
                             <Badge
                                 containerStyles="absolute top-[55%] -right-[1rem] "
                                 icon={<RiTeamFill />}
-                                endCountNum={1}
-                                endCountText="K"
-                                badgeText="Happy Clients"
+                                endCountNum={5}
+                                endCountText="y"
+                                badgeText="Software Engineer"
                             />
                         </ScrollParallax>
 
