@@ -151,11 +151,12 @@ const Services = () => {
                             <CardFooter>
                                 <Popover modal>
                                     <PopoverTrigger asChild>
-                                        <Button
+                                        <button
+                                            className="underline underline-offset-2"
                                             onClick={() => setLoading(true)}
                                         >
-                                            Click to load
-                                        </Button>
+                                            View Details
+                                        </button>
                                     </PopoverTrigger>
                                     <PopoverContent className="w-auto ">
                                         {/* Core Loader Modal */}
