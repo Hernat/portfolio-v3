@@ -104,7 +104,7 @@ const Services = () => {
                                  View Details
                               </button>
                            </PopoverTrigger>
-                           <PopoverContent className="w-auto ">
+                           <PopoverContent className="w-auto h-full ">
                               {/* Core Loader Modal */}
                               <Loader
                                  loadingStates={service.loadingStates}
