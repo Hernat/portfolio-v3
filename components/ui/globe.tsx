@@ -216,7 +216,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     };
 
     useEffect(() => {
-        if ( !globeRef.current || !globeData) return;
+        if (!globeRef.current || !globeData) return;
 
         const interval = setInterval(() => {
             if (!globeRef.current || !globeData) return;

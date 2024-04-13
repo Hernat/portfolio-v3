@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import React from "react";
@@ -6,10 +6,10 @@ import dynamic from "next/dynamic";
 import { ArrowRight } from "lucide-react";
 
 const World = dynamic(
-    () => import("@/components/ui/globe").then((m) => m.World),
-    {
-        ssr: false,
-    }
+   () => import("@/components/ui/globe").then((m) => m.World),
+   {
+      ssr: false,
+   }
 );
 
 const Cta = () => {
@@ -400,22 +400,28 @@ const Cta = () => {
    ];
 
    return (
-      <section className="py-24 bg-secondary dark:bg-secondary/40 relative flex flex-col items-center gap-y-10">
-         <div className="container mx-auto ">
-            <div className="flex flex-col items-center">
+      <section className="pt-24 bg-secondary dark:bg-secondary/40 relative  ">
+         <div className="container mx-auto">
+            <div className="flex flex-col items-center  ">
                <h2 className="h2 max-w-xl text-center mb-8">
                   Ready to take your next project to the next level? Count on me
                   to lend a hand.
                </h2>
-               <Link href="/contact" type="button" className="flex items-center gap-x-4 underline underline-offset-4">
-                  Contact me  <ArrowRight size={18} />
+               <Link
+                  href="/contact"
+                  type="button"
+                  className="flex items-center gap-x-4 underline underline-offset-4"
+               >
+                  Contact me <ArrowRight size={18} />
                </Link>
             </div>
          </div>
-         {/* Globe */}
-         <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
-         <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
-            <World data={sampleArcs} globeConfig={globeConfig} />
+         <div className="  mx-auto w-full relative overflow-hidden h-full md:h-[35rem] px-4">
+            {/* Globe */}
+            <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
+            <div className="absolute w-full -bottom-5 -left-4 h-72 md:h-full z-10">
+               <World data={sampleArcs} globeConfig={globeConfig} />
+            </div>
          </div>
       </section>
    );
