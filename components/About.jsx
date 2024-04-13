@@ -17,7 +17,7 @@ import { EvervaultCard, Icon } from "./ui/evervault-card";
 const infosData = [
    {
       icon: <User2 size={20} />,
-      text: "Toky Hernat",
+      text: "Toky Hernat RIJAMANJAKA",
    },
 
    {
@@ -183,7 +183,7 @@ const About = () => {
                               <h3 className="h3 mb-4 ">
                                  Unmatched Service Quality for over 2 years
                               </h3>
-                              <p className="subtitle max-w-xl mx-auto  xl:mx-0 ">
+                              <p className="subtitle max-w-2xl mx-auto  xl:mx-0 text-justify">
                                  Immersed in the realm of cutting-edge
                                  technologies and fueled by a passion for web
                                  development, I am a seasoned professional with
@@ -192,13 +192,13 @@ const About = () => {
                                  to life.
                               </p>
                               {/* icons */}
-                              <div className="grid xl:grid-cols-2 gap-4 mt-8 mb-8">
+                              <div className="md:flex-row lg:grid lg:grid-cols-2   gap-4 mt-8 mb-8">
                                  {infosData.map((info, index) => (
                                     <div
-                                       className="flex items-center xl:mb-2 gap-x-4 mx-auto xl:mx-0"
+                                       className="flex items-center  text-left  xl:mb-2 gap-x-4 mx-auto xl:mx-0"
                                        key={index}
                                     >
-                                       <div className="text-primary">
+                                       <div className="text-primary ">
                                           {info.icon}
                                        </div>
                                        <div className="text-left">
