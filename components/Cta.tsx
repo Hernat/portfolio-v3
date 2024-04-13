@@ -400,8 +400,8 @@ const Cta = () => {
    ];
 
    return (
-      <section className="pt-24 bg-secondary dark:bg-secondary/40 relative  ">
-         <div className="container mx-auto">
+      <section className="pt-20 pb-20 md:pb-0 bg-secondary dark:bg-secondary/40 relative  ">
+         <div className="container mx-auto ">
             <div className="flex flex-col items-center  ">
                <h2 className="h2 max-w-xl text-center mb-8">
                   Ready to take your next project to the next level? Count on me
