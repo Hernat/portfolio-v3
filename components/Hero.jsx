@@ -34,6 +34,13 @@ const Hero = () => {
         // },
     ];
 
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/CV_ANG_Toky_Hernat_Rijamanjaka.pdf";
+        link.download = "CV_ANG_Toky_Hernat_Rijamanjaka.pdf";
+        link.click();
+    };
+
     return (
         <section className="py-12 xl:py-4 h-[84vh] xl:pt-28 ">
             <Spotlight
@@ -53,13 +60,13 @@ const Hero = () => {
                         <h1 className="h1 mb-4">
                             Hello, my name is{" "}
                             <span className="bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50">
-                                Lorem Ipsum.
+                                Toky Hernat.
                             </span>
                         </h1>
                         <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Vel quasi fuga tempore eius tenetur recusandae
-                            quos, assumenda quaerat voluptatibus ullam ut.
+                            I am passionate, creative, and determined, always
+                            ready to take on new challenges with curiosity and
+                            perseverance.
                         </p>
                         {/* buttons */}
                         <div className="flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12">
@@ -72,6 +79,7 @@ const Hero = () => {
                             <Button
                                 variant="outline"
                                 className="gap-x-2 border border-primary"
+                                onClick={handleDownload}
                             >
                                 Download my CV <Download size={18} />
                             </Button>

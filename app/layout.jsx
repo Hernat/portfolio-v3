@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "../components/Header";
+import { Toaster } from "@/components/ui/toaster";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -14,10 +15,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={outfit.className}>
+            <body className={outfit.className} suppressHydrationWarning>
                 <ThemeProvider attribute="class" defaultTheme="dark">
                     <Header />
                     {children}
+                    <Toaster />
                     <Footer />
                 </ThemeProvider>
             </body>
