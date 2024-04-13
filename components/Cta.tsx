@@ -1,8 +1,16 @@
+"use client"
 import Link from "next/link";
 import { Button } from "./ui/button";
-
 import React from "react";
-import { World } from "./ui/globe";
+import dynamic from "next/dynamic";
+import { ArrowRight } from "lucide-react";
+
+const World = dynamic(
+    () => import("@/components/ui/globe").then((m) => m.World),
+    {
+        ssr: false,
+    }
+);
 
 const Cta = () => {
    const globeConfig = {
@@ -399,8 +407,8 @@ const Cta = () => {
                   Ready to take your next project to the next level? Count on me
                   to lend a hand.
                </h2>
-               <Link href="/contact">
-                  <Button>Contact me</Button>
+               <Link href="/contact" type="button" className="flex items-center gap-x-4 underline underline-offset-4">
+                  Contact me  <ArrowRight size={18} />
                </Link>
             </div>
          </div>

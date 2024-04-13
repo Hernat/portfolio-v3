@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
@@ -93,10 +94,14 @@ export function Globe({ globeConfig, data }: WorldProps) {
     };
 
     useEffect(() => {
-        if (globeRef.current) {
+       try {
+        if ( globeRef.current) {
             _buildData();
             _buildMaterial();
         }
+    } catch (error) {
+        // Ne rien faire en cas d'erreur ou gérer l'erreur de manière appropriée
+    }
     }, [globeRef.current]);
 
     const _buildMaterial = () => {
@@ -211,7 +216,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     };
 
     useEffect(() => {
-        if (!globeRef.current || !globeData) return;
+        if ( !globeRef.current || !globeData) return;
 
         const interval = setInterval(() => {
             if (!globeRef.current || !globeData) return;
