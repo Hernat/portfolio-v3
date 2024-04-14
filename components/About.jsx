@@ -60,7 +60,7 @@ const skillsData = [
          },
          {
             name: "React JS, Next JS",
-            level: 80,
+            level: 90,
          },
          {
             name: "MongoDB, MySQL, PostgreSQL",
@@ -338,7 +338,7 @@ const About = () => {
                                  <h4 className="h4 mb-2">Skills</h4>
                                  <div className="border-b border-border mb-4"></div>
                                  {/* skills list */}
-                                 <div className="mb-12">
+                                 <div className="mb-12 w-full">
                                     {getData(skillsData, "skills").data.map(
                                        (skill, index) => {
                                           const { name, level } = skill;
@@ -351,10 +351,11 @@ const About = () => {
                                                 <div className="flex flex-col font-medium mb-2">
                                                    <span
                                                       key={index}
+                                                      style={{
+                                                         width: `${level}%`,
+                                                      }}
                                                       className={cn(
-                                                         "rounded-sm border-b-8 text-md font-medium mb-2 px-2.5 py-0.5 bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50 border-primary bg-muted-foreground",
-                                                         level &&
-                                                            `w-[${level}%]`
+                                                         "rounded-sm border-b-8 text-md font-medium mb-2 px-2.5 py-0.5 bg-clip-text text-transparent bg-gradient-to-t from-amber-900 via-yellow-500 to-orange-800 h-full bg-opacity-50 border-primary bg-muted-foreground"
                                                       )}
                                                    >
                                                       {name}
