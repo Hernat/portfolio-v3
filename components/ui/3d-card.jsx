@@ -1,14 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import React, {
-    createContext,
-    useState,
-    useContext,
-    useRef,
-    useEffect,
-} from "react";
+import React, { createContext, useContext, useEffect, useRef, useState } from "react";
 
 const MouseEnterContext = createContext(undefined);
 
@@ -18,8 +11,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
 
     const handleMouseMove = (e) => {
         if (!containerRef.current) return;
-        const { left, top, width, height } =
-            containerRef.current.getBoundingClientRect();
+        const { left, top, width, height } = containerRef.current.getBoundingClientRect();
         const x = (e.clientX - left - width / 2) / 25;
         const y = (e.clientY - top - height / 2) / 25;
         containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
@@ -38,10 +30,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
     return (
         <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
             <div
-                className={cn(
-                    "py-20 flex items-center justify-center",
-                    containerClassName
-                )}
+                className={cn("py-20 flex items-center justify-center", containerClassName)}
                 style={{
                     perspective: "1000px",
                 }}
@@ -51,10 +40,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
                     onMouseEnter={handleMouseEnter}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
-                    className={cn(
-                        "flex items-center justify-center relative transition-all duration-200 ease-linear",
-                        className
-                    )}
+                    className={cn("flex items-center justify-center relative transition-all duration-200 ease-linear", className)}
                     style={{
                         transformStyle: "preserve-3d",
                     }}
@@ -67,16 +53,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
 };
 
 export const CardBody = ({ children, className }) => {
-    return (
-        <div
-            className={cn(
-                "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
-                className
-            )}
-        >
-            {children}
-        </div>
-    );
+    return <div className={cn("h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]", className)}>{children}</div>;
 };
 
 export const CardItem = ({
@@ -96,6 +73,7 @@ export const CardItem = ({
 
     useEffect(() => {
         handleAnimations();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isMouseEntered]);
 
     const handleAnimations = () => {
@@ -108,14 +86,7 @@ export const CardItem = ({
     };
 
     return (
-        <Tag
-            ref={ref}
-            className={cn(
-                "w-fit transition duration-200 ease-linear",
-                className
-            )}
-            {...rest}
-        >
+        <Tag ref={ref} className={cn("w-fit transition duration-200 ease-linear", className)} {...rest}>
             {children}
         </Tag>
     );
@@ -125,9 +96,7 @@ export const CardItem = ({
 export const useMouseEnter = () => {
     const context = useContext(MouseEnterContext);
     if (context === undefined) {
-        throw new Error(
-            "useMouseEnter must be used within a MouseEnterProvider"
-        );
+        throw new Error("useMouseEnter must be used within a MouseEnterProvider");
     }
     return context;
 };
