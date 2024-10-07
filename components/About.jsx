@@ -99,8 +99,8 @@ const qualificationsData = [
         title: "experiences",
         data: [
             {
-                company: "AZ Plus",
-                role: "Developer we full-stack",
+                company: "AZ Plus (AZ+)",
+                role: "Developer web full-stack",
                 years: "2024 - now",
             },
             {
